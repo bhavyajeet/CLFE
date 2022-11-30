@@ -1,4 +1,9 @@
-# Utilising generative approaches for cross lingual fact extraction
+# Massively Multilingual Language Models for Cross Lingual Fact Extraction from Low Resource Indian Languages
+
+This repository contains the source code for the paper: Massively Multilingual Language Models for Cross Lingual Fact Extraction from Low Resource Indian Languages, ICON 2022.
+
+
+## Overview 
 
 In this work, we propose the creation of cross-lingual fact extraction 
 
@@ -7,7 +12,27 @@ We explored two different unsupervised methods to solve cross-lingual alignment 
 - Classification base two phase pipeline
 - End-to-end Generative Approach
 
+![Overview image](overview.jpg)
+
+
 This repository consists of steps for executing the cross-lingual fact extraction approaches 
+
+
+## Requirements 
+This repo was tested on Python 3.7. The main requirements are: 
+- torch==1.7.1
+- pytorch-lightning==1.0.8
+- indic-nlp-library==0.81
+- sacrebleu==2.0.0
+- sacremoses==0.0.43
+- transformers==4.9.2
+- tqdm==4.48.2
+- wandb==0.12.4
+- urduhack==1.1.1
+- unidecode==1.2.0
+- sentencepiece==0.1.91
+- light-the-torch==0.3.5
+
 
 ## Installation
 Install the required packgaes as follow:
@@ -16,6 +41,8 @@ pip install -r requirements.txt
 ```
 For preprocessing IndicTrans needs to be installed and setup. Please follow these instructions for setup.
 [IndicTrans installation guidelines](https://colab.research.google.com/github/AI4Bharat/indicTrans/blob/main/indicTrans_python_interface.ipynb#scrollTo=E_4JxNdRlPQB)
+
+## Dataset 
 
 ### Gold standard Test dataset
 
@@ -48,7 +75,7 @@ Kannada|25441|19.3/5/99|1.9/1/10|
 
 ## Cross-lingual fact extraction 
 
-To finetune the best baseline on the XAlign, follow the steps:
+To finetune the generative pipeline on the XAlign dataset, follow the steps:
 
 ```
 $ cd data-to-text-generator/mT5-baseline
